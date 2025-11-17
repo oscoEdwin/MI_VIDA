@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Fase 2 - Sorpresas con Flip</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffe0f0, #fff5fa);
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #ff69b4;
+      color: white;
+    }
+
+    .fase2-contenido {
+      text-align: center;
+      margin: 30px auto;
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    .fase2-mensaje {
+      font-size: 1.3em;
+      margin-bottom: 20px;
+    }
+
+    /* Contenedor del flip */
+    .flip-card {
+      background-color: transparent;
+      width: 250px;
+      height: 250px;
+      perspective: 1000px; /* profundidad 3D */
+      margin: 0 auto;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .flip-card-front img,
+    .flip-card-back img {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+    }
+
+    .fase2-boton {
+      padding: 12px 24px;
+      font-size: 1em;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .fase2-boton:hover {
+      transform: scale(1.05);
+      background-color: #ff85c1;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="fase2-contenido">
+    <p class="fase2-mensaje">Gracias por aparecer en mi Vida <br>
+    Eres mi Princesa Hermosa que llego a darle color a mi Mundo <br>
+    Ahora no se que haria sin ti <br>
+    Espero te este haciendo feliz cada dia <br>
+    Te Quiero Mucho Mi Amor <br>
+    </p>
+    
+    <!-- Tarjeta con efecto flip -->
+    <div class="flip-card" id="flipCard">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="princesa1.jpeg" alt="QR sorpresa">
+        </div>
+        <div class="flip-card-back">
+          <img src="princesa2.jpeg" alt="Imagen sorpresa">
+        </div>
+      </div>
+    </div>
+    
+    <button class="fase2-boton" onclick="nextPhase('fase3.html')">
+      Siguiente
+    </button>
+  </main>
+
+
+  <script>
+    // Al hacer clic, alterna la clase "flipped"
+    const flipCard = document.getElementById('flipCard');
+    flipCard.addEventListener('click', () => {
+      flipCard.classList.toggle('flipped');
+    });
+
+    function nextPhase(page) {
+      window.location.href = page;
+    }
+  </script>
+</body>
+</html>

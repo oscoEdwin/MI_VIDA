@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Fase 3 - Collage</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Collage centrado */
+    .collage {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px; /* espacio entre imágenes */
+      margin-top: 20px;
+      flex-wrap: wrap; /* permite que se acomoden en varias filas si es necesario */
+    }
+
+    .collage img {
+      max-width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .collage img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Texto romántico centrado */
+    .letras_amor {
+      font-size: 2em;
+      text-align: center;
+      margin-top: 20px;
+      color: #ff1493;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Audio centrado */
+    audio {
+      display: block;
+      margin: 20px auto;
+    }
+
+    header, footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #ff69b4;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header><h1>Nuestros Recuerdos Mi Vida</h1></header>
+  <main>
+    <div class="collage">
+      <img src="prince1.jpeg" alt="Recuerdo 1">
+      <img src="prince2.jpeg" alt="Recuerdo 2">
+      <img src="prince3.jpeg" alt="Recuerdo 3">
+    </div>
+    <audio controls autoplay>
+      <source src="mi_persona.mp3" type="audio/mpeg">
+    </audio>
+  </main>
+  <p class="letras_amor">
+    Te Quiero Mucho Mi Amor ❤❤❤
+  </p>
+  <script src="script.js"></script>
+</body>
+</html>
